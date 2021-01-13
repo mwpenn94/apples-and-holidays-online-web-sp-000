@@ -59,6 +59,17 @@ def add_new_holiday_with_supplies(holiday_hash, season, holiday_name, supply_arr
   holidayname_key_supplyarray_value = {holiday_name => supply_array}
   season_holiday_name_hash = season_key_holidayname_value.to_hash
   holidayname_supplyarray = holidayname_key_supplyarray_value.to_hash
+  holiday_hash.each do |season, season_holidays_hash|
+    if season == :spring
+      season_holidays_hash.each do |attribute, data|
+        if attribute == :memorial_day
+           data << supply
+          end
+        end
+      end
+    end
+  return holiday_hash   
+end
   
 end
 
